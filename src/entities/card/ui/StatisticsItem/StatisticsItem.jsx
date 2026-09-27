@@ -1,10 +1,12 @@
+import styles from "./StatisticsItem.module.css";
+
 const StatisticsItem = (props) => {
     const { title, number } = props;
 
     return (
-        <li>
-            <p>{title}</p>
-            <p>{number}</p>
+        <li className={styles.statisticsItem}>
+            <span className={styles.statisticsItem__title}>{title}</span>
+            <span className={styles.statisticsItem__number}>{number}</span>
         </li>
     );
 };

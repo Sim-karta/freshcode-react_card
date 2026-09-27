@@ -1,0 +1,75 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card__header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card__header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse at 50% 75%,
+        rgb(0 0 0 / 70%) 0%,
+        rgb(0 0 0 / 30%) 45%,
+        transparent 80%
+    );
+}
+
+.card__like {
+    position: absolute;
+    z-index: 2;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    color: #f54260;
+    border: none;
+}
+
+.card__image {
+    height: 500px;
+    object-fit: cover;
+}
+
+.card__title {
+    position: absolute;
+    z-index: 3;
+    bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.card__follow {
+    width: 3rem;
+    height: 3rem;
+    background-color: #f54260;
+    border: none;
+    border-radius: 1.5rem;
+    margin-top: -1.5rem;
+    z-index: 1;
+}
+
+.card__link {
+    color: inherit;
+}
+
+.card__body {
+    padding: 2rem 1rem;
+}
