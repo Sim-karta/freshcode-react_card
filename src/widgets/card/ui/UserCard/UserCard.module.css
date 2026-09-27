@@ -32,12 +32,26 @@
     position: absolute;
     z-index: 2;
     top: 1rem;
-    right: 1rem;
+    right: 2rem;
     width: 2rem;
     height: 2rem;
     background-color: transparent;
-    color: #f54260;
+    color: #fafafa;
+    font-size: 2rem;
     border: none;
+    transition-duration: 0.2s;
+}
+
+.card__like:hover {
+    color: #f54260;
+}
+
+.card__like.is-active {
+    color: #f54260;
+}
+
+.card__like.is-active:hover {
+    color: #fafafa;
 }
 
 .card__image {
@@ -59,15 +73,28 @@
 .card__follow {
     width: 3rem;
     height: 3rem;
+    color: #fff;
     background-color: #f54260;
     border: none;
     border-radius: 1.5rem;
     margin-top: -1.5rem;
     z-index: 1;
+    transition-duration: 0.2s;
+}
+
+.card__follow:hover {
+    background-color: #fafafa;
+    color: #f54260;
+    border: 2px solid #f54260;
 }
 
 .card__link {
     color: inherit;
+    transition-duration: 0.2s;
+}
+
+.card__link:hover {
+    color: #93afcf;
 }
 
 .card__body {
