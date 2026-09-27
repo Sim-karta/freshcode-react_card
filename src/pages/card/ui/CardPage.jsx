@@ -8,7 +8,7 @@ const CardPage = () => {
                 profile="@SadieSink"
                 link="https://google.com"
                 statistics={{
-                    treets: 1337,
+                    tweets: 1337,
                     following: 561,
                     followers: 718,
                 }}
