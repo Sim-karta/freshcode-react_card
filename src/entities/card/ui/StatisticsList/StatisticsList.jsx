@@ -1,3 +1,4 @@
+import { memo } from "react";
 import StatisticsItem from "../StatisticsItem/StatisticsItem";
 import styles from "./StatisticsList.module.css";
 
@@ -13,4 +14,4 @@ const StatisticsList = (props) => {
     );
 };
 
-export default StatisticsList;
+export default memo(StatisticsList);

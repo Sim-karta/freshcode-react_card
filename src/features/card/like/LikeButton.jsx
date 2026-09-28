@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Button from "../../../shared/ui/Button/Button";
 
 const LikeButton = (props) => {
@@ -21,4 +22,4 @@ const LikeButton = (props) => {
     );
 };
 
-export default LikeButton;
+export default memo(LikeButton);

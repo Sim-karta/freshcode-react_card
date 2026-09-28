@@ -2,7 +2,7 @@ import StatisticsList from "../../../../entities/card/ui/StatisticsList/Statisti
 import Button from "../../../../shared/ui/Button/Button.jsx";
 import avatar from "../../../../shared/assets/images/avatar.jpg";
 import styles from "./UserCard.module.css";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 const UserCard = (props) => {
     const { name, gender, profile, link, statistics } = props;
@@ -19,7 +19,7 @@ const UserCard = (props) => {
 
     const toggleLike = useCallback(() => {
         setIsLike((state) => !state);
-    });
+    }, []);
 
     const [isFollowing, setIsFollowing] = useState(false);
     const [followers, setFollowers] = useState(statistics.followers);
@@ -27,7 +27,12 @@ const UserCard = (props) => {
     const toggleFollow = useCallback(() => {
         setIsFollowing((state) => !state);
         setFollowers((count) => count + (isFollowing ? -1 : 1));
-    });
+    }, [isFollowing]);
+
+    const newStatistics = useMemo(
+        () => ({ ...statistics, followers }),
+        [followers],
+    );
 
     return (
         <article className={styles.card}>
@@ -52,7 +57,7 @@ const UserCard = (props) => {
                 {isFollowing ? "✓" : "+"}
             </Button>
             <div className={styles.card__body}>
-                <StatisticsList statistics={{ ...statistics, followers }} />
+                <StatisticsList statistics={newStatistics} />
             </div>
         </article>
     );
