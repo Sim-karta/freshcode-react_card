@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Button from "../../../shared/ui/Button/Button";
 
 const FollowButton = (props) => {
@@ -21,4 +22,4 @@ const FollowButton = (props) => {
     );
 };
 
-export default FollowButton;
+export default memo(FollowButton);
