@@ -51,7 +51,7 @@
 }
 
 .card__like.isActive:hover {
-    color: #fafafa;
+    color: #909090;
 }
 
 .card__image {

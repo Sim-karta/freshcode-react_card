@@ -15,6 +15,12 @@ const UserCard = (props) => {
         nameColorStyle = styles.isFemale;
     }
 
+    const [isLike, setIsLike] = useState(false);
+
+    const toggleLike = useCallback(() => {
+        setIsLike((state) => !state);
+    });
+
     const [isFollowing, setIsFollowing] = useState(false);
     const [followers, setFollowers] = useState(statistics.followers);
 
@@ -26,7 +32,12 @@ const UserCard = (props) => {
     return (
         <article className={styles.card}>
             <div className={styles.card__header}>
-                <Button className={styles.card__like}>❤</Button>
+                <Button
+                    className={`${styles.card__like} ${isLike ? styles.isActive : ""}`}
+                    onClick={toggleLike}
+                >
+                    ❤
+                </Button>
                 <img className={styles.card__image} src={avatar} alt={name} />
                 <div className={styles.card__title}>
                     <h2 className={`${styles.card__name} ${nameColorStyle}`}>
