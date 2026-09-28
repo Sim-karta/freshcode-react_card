@@ -4,7 +4,15 @@ import avatar from "../../../../shared/assets/images/avatar.jpg";
 import styles from "./UserCard.module.css";
 
 const UserCard = (props) => {
-    const { name, profile, link, statistics } = props;
+    const { name, gender, profile, link, statistics } = props;
+
+    let nameColorStyle = "";
+
+    if (gender === "male") {
+        nameColorStyle = styles.isMale;
+    } else if (gender === "female") {
+        nameColorStyle = styles.isFemale;
+    }
 
     return (
         <article className={styles.card}>
@@ -12,7 +20,9 @@ const UserCard = (props) => {
                 <Button className={styles.card__like}>❤</Button>
                 <img className={styles.card__image} src={avatar} alt={name} />
                 <div className={styles.card__title}>
-                    <h2 className={styles.card__name}>{name}</h2>
+                    <h2 className={`${styles.card__name} ${nameColorStyle}`}>
+                        {name}
+                    </h2>
                     <a href={link} className={styles.card__link}>
                         {profile}
                     </a>

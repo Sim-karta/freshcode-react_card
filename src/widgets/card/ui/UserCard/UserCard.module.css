@@ -46,11 +46,11 @@
     color: #f54260;
 }
 
-.card__like.is-active {
+.card__like.isActive {
     color: #f54260;
 }
 
-.card__like.is-active:hover {
+.card__like.isActive:hover {
     color: #fafafa;
 }
 
@@ -68,6 +68,18 @@
     justify-content: center;
     align-items: center;
     color: #fff;
+}
+
+.card__name {
+    color: #fff;
+}
+
+.card__name.isMale {
+    color: #a8e2ff;
+}
+
+.card__name.isFemale {
+    color: #e8b5d5;
 }
 
 .card__follow {
