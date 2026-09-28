@@ -2,6 +2,7 @@ import StatisticsList from "../../../../entities/card/ui/StatisticsList/Statisti
 import Button from "../../../../shared/ui/Button/Button.jsx";
 import avatar from "../../../../shared/assets/images/avatar.jpg";
 import styles from "./UserCard.module.css";
+import { useCallback, useState } from "react";
 
 const UserCard = (props) => {
     const { name, gender, profile, link, statistics } = props;
@@ -13,6 +14,14 @@ const UserCard = (props) => {
     } else if (gender === "female") {
         nameColorStyle = styles.isFemale;
     }
+
+    const [isFollowing, setIsFollowing] = useState(false);
+    const [followers, setFollowers] = useState(statistics.followers);
+
+    const toggleFollow = useCallback(() => {
+        setIsFollowing((state) => !state);
+        setFollowers((count) => count + (isFollowing ? -1 : 1));
+    });
 
     return (
         <article className={styles.card}>
@@ -28,9 +37,11 @@ const UserCard = (props) => {
                     </a>
                 </div>
             </div>
-            <Button className={styles.card__follow}>+</Button>
+            <Button className={styles.card__follow} onClick={toggleFollow}>
+                {isFollowing ? "✓" : "+"}
+            </Button>
             <div className={styles.card__body}>
-                <StatisticsList statistics={statistics} />
+                <StatisticsList statistics={{ ...statistics, followers }} />
             </div>
         </article>
     );
