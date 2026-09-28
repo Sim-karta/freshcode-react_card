@@ -5,6 +5,7 @@ const CardPage = () => {
         <>
             <UserCard
                 name="Sadie Sink"
+                gender="female"
                 profile="@SadieSink"
                 link="https://google.com"
                 statistics={{

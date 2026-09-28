@@ -1,0 +1,18 @@
+.statisticsItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding-inline: 1.5rem;
+}
+
+.statisticsItem:not(:last-child) {
+    border-right: 1px solid #696969;
+}
+
+.statisticsItem__title {
+    font-size: 12px;
+    color: #696969;
+    font-weight: 700;
+}
