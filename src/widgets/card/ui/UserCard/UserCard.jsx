@@ -19,7 +19,7 @@ const UserCard = (props) => {
 
     const toggleLike = useCallback(() => {
         setIsLike((state) => !state);
-    });
+    }, []);
 
     const [isFollowing, setIsFollowing] = useState(false);
     const [followers, setFollowers] = useState(statistics.followers);
@@ -27,7 +27,7 @@ const UserCard = (props) => {
     const toggleFollow = useCallback(() => {
         setIsFollowing((state) => !state);
         setFollowers((count) => count + (isFollowing ? -1 : 1));
-    });
+    }, [isFollowing]);
 
     return (
         <article className={styles.card}>
